@@ -1,0 +1,81 @@
+{
+  "content": [
+    {
+      "type": "row",
+      "attrs": {
+        "class": "vc_row ssdk-row",
+        "css_animation": "",
+        "el_class": "ssdk-blog-title-row"
+      },
+      "content": [
+        {
+          "type": "column",
+          "attrs": {
+            "width": "1/1",
+            "css_animation": "",
+            "el_class": ""
+          },
+          "content": [
+            {
+              "type": "thegem_page_title",
+              "attrs": {
+                "css_animation": "",
+                "el_class": ""
+              },
+              "content": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "attrs": {
+        "class": "vc_row ssdk-row",
+        "css_animation": "",
+        "el_class": "ssdk-blog-grid-row"
+      },
+      "content": [
+        {
+          "type": "column",
+          "attrs": {
+            "width": "1/1",
+            "css_animation": "",
+            "el_class": ""
+          },
+          "content": [
+            {
+              "type": "thegem_post_grid",
+              "attrs": {
+                "source": "category",
+                "category": "",
+                "taxonomy": "category",
+                "posts_per_page": "12",
+                "orderby": "date",
+                "order": "DESC",
+                "design": "justified",
+                "image_size": "full",
+                "show_title": "yes",
+                "title_tag": "h3",
+                "title_color": "",
+                "show_excerpt": "yes",
+                "excerpt_words": "26",
+                "show_date": "yes",
+                "date_format": "M j, Y",
+                "show_comments": "no",
+                "show_cats": "yes",
+                "cats_color": "accent",
+                "show_read_more": "yes",
+                "read_more_text": "Read more",
+                "columns": "6",
+                "css_animation": "",
+                "el_class": ""
+              },
+              "content": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

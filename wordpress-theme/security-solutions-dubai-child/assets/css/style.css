@@ -1,0 +1,1446 @@
+/* =====================================================================
+   Security Solutions Dubai Child — Design System
+   TheGem 5.13.1 + WPBakery · brighter blue · larger type · fewer cards
+   ===================================================================== */
+
+:root {
+	--ssdk-blue: #1763C6;
+	--ssdk-blue-dark: #124F99;
+	--ssdk-blue-deep: #0C2A44;
+	--ssdk-blue-50: #EAF2FB;
+	--ssdk-blue-100: #DCEAF7;
+	--ssdk-accent: #F58A2B;
+	--ssdk-accent-dark: #D9711A;
+	--ssdk-ink: #12293E;
+	--ssdk-body: #4A5C6E;
+	--ssdk-muted: #7A8B9C;
+	--ssdk-paper: #FFFFFF;
+	--ssdk-mist: #F4F8FB;
+	--ssdk-line: #DCE6F0;
+	--ssdk-radius: 14px;
+	--ssdk-radius-lg: 20px;
+	--ssdk-shadow: 0 10px 30px rgba(12, 42, 68, .08);
+	--ssdk-shadow-lg: 0 20px 50px rgba(12, 42, 68, .12);
+	--ssdk-ease: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+	margin: 0;
+	font-family: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+	font-size: 16.5px;
+	line-height: 1.65;
+	color: var(--ssdk-body);
+	background: var(--ssdk-paper);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+img, svg { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--ssdk-blue); text-decoration: none; transition: color .2s var(--ssdk-ease); }
+a:hover { color: var(--ssdk-blue-dark); }
+
+h1, h2, h3, h4, h5 {
+	margin: 0 0 .35em;
+	line-height: 1.2;
+	font-weight: 800;
+	color: var(--ssdk-ink);
+	letter-spacing: -.015em;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+
+p { margin: 0 0 1em; }
+
+ul, ol { margin: 0; padding: 0; }
+li { list-style: none; }
+
+.ssdk-container {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+/* Page-builder content container (homepage WPBakery content) */
+.ssdk-pb-container {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+.ssdk-skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	background: var(--ssdk-blue);
+	color: #fff;
+	padding: 10px 18px;
+	z-index: 999;
+	border-radius: 0 0 8px 0;
+}
+.ssdk-skip-link:focus { left: 0; }
+
+/* ---------- Utility bar ---------- */
+.ssdk-utilbar {
+	background: var(--ssdk-blue-deep);
+	color: #A9BDD3;
+	font-size: 13px;
+}
+.ssdk-utilbar a { color: #DCEAF7; }
+.ssdk-utilbar a:hover { color: #fff; }
+.ssdk-utilbar-inner {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 8px 24px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+.util-addr, .util-links { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.util-addr a, .util-links a { display: inline-flex; align-items: center; gap: 6px; }
+.util-social { display: flex; align-items: center; gap: 12px; }
+.util-social-link {
+	width: 28px; height: 28px;
+	display: inline-flex; align-items: center; justify-content: center;
+	color: #A9BDD3; border-radius: 50%;
+	transition: background .2s, color .2s;
+}
+.util-social-link:hover { background: rgba(255, 255, 255, .12); color: #fff; }
+.ssdk-ic { display: inline-flex; align-items: center; justify-content: center; }
+.ssdk-ic svg { width: 100%; height: 100%; }
+
+/* ---------- Main header ---------- */
+.ssdk-site-header {
+	background: var(--ssdk-paper);
+	border-bottom: 1px solid var(--ssdk-line);
+	position: relative;
+	z-index: 200;
+	transition: box-shadow .3s var(--ssdk-ease), background .3s;
+}
+.ssdk-site-header.is-sticky {
+	box-shadow: 0 8px 24px rgba(12, 42, 68, .1);
+}
+.ssdk-header-inner {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 14px 24px;
+	display: flex;
+	align-items: center;
+	gap: 28px;
+}
+.ssdk-logo img { height: 56px; width: auto; max-width: 240px; }
+.ssdk-logo-light img { filter: brightness(0) invert(1); }
+
+/* Nav */
+.ssdk-nav-wrap { margin-left: auto; }
+.ssdk-nav {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	margin: 0;
+	padding: 0;
+}
+.ssdk-nav > li { position: relative; }
+.menu-link {
+	display: inline-flex;
+	align-items: center;
+	padding: 12px 14px;
+	font-size: 15px;
+	font-weight: 700;
+	color: var(--ssdk-ink);
+	border-radius: 8px;
+	transition: color .2s, background .2s;
+}
+.menu-link:hover { color: var(--ssdk-blue); }
+.menu-link.is-active { color: var(--ssdk-blue); }
+.menu-link.is-active::after {
+	content: '';
+	display: block;
+	height: 3px;
+	width: 22px;
+	margin: 4px auto 0;
+	background: var(--ssdk-blue);
+	border-radius: 2px;
+}
+
+/* Dropdown trigger */
+.menu-trigger {
+	position: absolute;
+	top: 50%; right: 6px;
+	transform: translateY(-50%);
+	width: 34px; height: 34px;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+	padding: 0;
+}
+.menu-trigger span {
+	display: block;
+	width: 18px; height: 2px;
+	background: var(--ssdk-ink);
+	border-radius: 2px;
+	transition: transform .25s var(--ssdk-ease), opacity .2s;
+}
+.menu-trigger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-trigger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-trigger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Dropdown panel */
+.menu-panel {
+	position: absolute;
+	top: calc(100% + 8px);
+	left: 0;
+	min-width: 260px;
+	background: var(--ssdk-paper);
+	border: 1px solid var(--ssdk-line);
+	border-radius: var(--ssdk-radius);
+	box-shadow: var(--ssdk-shadow-lg);
+	padding: 10px;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(8px);
+	transition: opacity .25s var(--ssdk-ease), transform .25s var(--ssdk-ease), visibility .25s;
+	z-index: 50;
+}
+.ssdk-nav > li:hover > .menu-panel,
+.ssdk-nav > li:focus-within > .menu-panel {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+.ssdk-nav > li:hover > .menu-trigger,
+.ssdk-nav > li:focus-within > .menu-trigger {
+	color: var(--ssdk-blue);
+}
+.ssdk-nav > li:hover > .menu-trigger span,
+.ssdk-nav > li:focus-within > .menu-trigger span { background: var(--ssdk-blue); }
+
+/* Mega panel */
+.menu-panel.mega {
+	min-width: 560px;
+	max-width: 640px;
+	padding: 22px;
+}
+.menu-panel.mega::after {
+	content: '';
+	position: absolute;
+	top: -8px;
+	left: 24px;
+	width: 16px; height: 16px;
+	background: var(--ssdk-paper);
+	border-left: 1px solid var(--ssdk-line);
+	border-top: 1px solid var(--ssdk-line);
+	transform: rotate(45deg);
+	visibility: hidden;
+}
+.ssdk-nav > li:hover > .menu-panel.mega::after { visibility: visible; }
+.mega-links {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 6px 18px;
+}
+.menu-link.mega-link {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 12px;
+	border-radius: 10px;
+	font-size: 14.5px;
+	color: var(--ssdk-ink);
+}
+.menu-link.mega-link:hover { background: var(--ssdk-blue-50); color: var(--ssdk-blue); }
+.mega-link-ic {
+	flex: 0 0 30px;
+	height: 30px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--ssdk-blue-50);
+	color: var(--ssdk-blue);
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 800;
+}
+.menu-link.mega-link:hover .mega-link-ic { background: var(--ssdk-blue); color: #fff; }
+.mega-link-all {
+	margin-top: 12px;
+	justify-content: center;
+	background: var(--ssdk-blue-50);
+	color: var(--ssdk-blue);
+	font-weight: 700;
+}
+.mega-link-all:hover { background: var(--ssdk-blue); color: #fff; }
+
+/* Header actions */
+.ssdk-header-actions { display: flex; align-items: center; gap: 14px; }
+.ssdk-phone-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 700;
+	font-size: 15px;
+	color: var(--ssdk-blue);
+	padding: 10px 6px;
+}
+.ssdk-cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--ssdk-accent);
+	color: #fff;
+	font-weight: 700;
+	font-size: 15px;
+	padding: 11px 22px;
+	border-radius: 999px;
+	box-shadow: 0 8px 20px rgba(245, 138, 43, .3);
+	transition: background .2s, transform .2s var(--ssdk-ease);
+}
+.ssdk-cta:hover { background: var(--ssdk-accent-dark); color: #fff; transform: translateY(-1px); }
+.ssdk-cta-light { background: #fff; color: var(--ssdk-blue); box-shadow: 0 8px 20px rgba(12, 42, 68, .18); }
+.ssdk-cta-light:hover { background: var(--ssdk-blue-50); }
+.ssdk-cta-block { width: 100%; margin-top: 10px; }
+.ssdk-cta-ghost {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--ssdk-ink);
+	font-weight: 700;
+	padding: 10px 4px;
+}
+.ssdk-burger {
+	display: none;
+	width: 44px; height: 44px;
+	border: 0;
+	background: none;
+	cursor: pointer;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	padding: 0;
+}
+.ssdk-burger span {
+	display: block;
+	width: 24px; height: 3px;
+	background: var(--ssdk-ink);
+	border-radius: 3px;
+	transition: transform .3s var(--ssdk-ease), opacity .2s;
+}
+.ssdk-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+.ssdk-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.ssdk-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+/* Mobile drawer */
+.ssdk-mobile-menu {
+	position: fixed;
+	top: 0; right: 0;
+	height: 100dvh;
+	width: min(88vw, 380px);
+	background: var(--ssdk-paper);
+	box-shadow: -20px 0 60px rgba(12, 42, 68, .18);
+	z-index: 900;
+	transform: translateX(105%);
+	transition: transform .35s var(--ssdk-ease);
+	overflow-y: auto;
+	padding: 84px 26px 32px;
+}
+.ssdk-mobile-menu.is-open { transform: translateX(0); }
+.ssdk-mobile-nav { display: block; }
+.ssdk-mobile-list { margin: 0; padding: 0; }
+.ssdk-mobile-list > li { border-bottom: 1px solid var(--ssdk-line); }
+.ssdk-mobile-list a {
+	display: block;
+	padding: 15px 2px;
+	font-weight: 700;
+	font-size: 16.5px;
+	color: var(--ssdk-ink);
+}
+.m-panel { background: var(--ssdk-mist); }
+.m-panel ul { padding: 4px 14px; }
+.m-panel a { font-size: 15px; color: var(--ssdk-body); padding: 10px 2px; }
+.ssdk-mobile-contact {
+	margin-top: 28px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	font-weight: 700;
+	color: var(--ssdk-blue);
+}
+.ssdk-mobile-backdrop {
+	position: fixed;
+	inset: 0;
+	background: rgba(12, 42, 68, .45);
+	z-index: 850;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .3s;
+}
+.ssdk-mobile-backdrop.is-open { opacity: 1; visibility: visible; }
+
+/* =====================================================================
+   Page title area (inner pages / posts / archives)
+   ===================================================================== */
+.ssdk-page-title {
+	background: linear-gradient(135deg, var(--ssdk-blue-deep) 0%, var(--ssdk-blue-dark) 60%, var(--ssdk-blue) 100%);
+	color: #fff;
+	padding: 56px 0 52px;
+	position: relative;
+	overflow: hidden;
+}
+.ssdk-page-title::before {
+	content: '';
+	position: absolute;
+	right: -120px; top: -120px;
+	width: 420px; height: 420px;
+	background: rgba(255, 255, 255, .06);
+	border-radius: 50%;
+}
+.ssdk-page-title::after {
+	content: '';
+	position: absolute;
+	left: -160px; bottom: -180px;
+	width: 380px; height: 380px;
+	background: rgba(255, 255, 255, .04);
+	border-radius: 50%;
+}
+.ssdk-breadcrumbs { position: relative; z-index: 1; margin-bottom: 16px; }
+.breadcrumb-list { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.breadcrumb-item { display: inline-flex; align-items: center; }
+.breadcrumb-item::after {
+	content: '›';
+	margin: 0 10px;
+	color: rgba(255, 255, 255, .55);
+	font-size: 15px;
+}
+.breadcrumb-item:last-child::after { display: none; }
+.breadcrumb-item a { color: rgba(255, 255, 255, .75); font-size: 14px; font-weight: 600; }
+.breadcrumb-item a:hover { color: #fff; }
+.breadcrumb-item.is-current { color: #fff; font-size: 14px; font-weight: 700; }
+.ssdk-page-title-text { position: relative; z-index: 1; color: #fff; font-size: 2.6rem; margin-bottom: .25em; }
+.ssdk-page-title-sub { position: relative; z-index: 1; color: rgba(255, 255, 255, .85); max-width: 760px; margin: 0; }
+
+/* Inner page content */
+.ssdk-page { padding: 64px 0 72px; }
+.ssdk-page-inner { display: flex; gap: 44px; align-items: flex-start; }
+.ssdk-page-inner.is-fullwidth { display: block; }
+.ssdk-content-wrap { flex: 1; min-width: 0; }
+.ssdk-page-inner.has-sidebar .ssdk-sidebar-wrap { flex: 0 0 320px; }
+.ssdk-page-inner.has-sidebar.sidebar-left .ssdk-sidebar-wrap { order: -1; }
+.ssdk-post { margin-bottom: 44px; }
+.ssdk-post:last-child { margin-bottom: 0; }
+.ssdk-post-thumb img { border-radius: var(--ssdk-radius); width: 100%; }
+.ssdk-post-content { margin-top: 20px; font-size: 16.5px; }
+.ssdk-post-content h2, .ssdk-post-content h3 { margin-top: 1.6em; }
+.ssdk-post-content h2:first-child, .ssdk-post-content h3:first-child { margin-top: 0; }
+.ssdk-post-content ul, .ssdk-post-content ol { padding-left: 24px; margin: 1em 0; }
+.ssdk-post-content li { list-style: disc; margin-bottom: .4em; }
+.ssdk-post-content img { border-radius: var(--ssdk-radius); margin: 1.4em 0; }
+.ssdk-post-content a { font-weight: 700; }
+.ssdk-post-content blockquote {
+	margin: 1.6em 0;
+	padding: 18px 22px;
+	border-left: 4px solid var(--ssdk-blue);
+	background: var(--ssdk-blue-50);
+	border-radius: 0 var(--ssdk-radius) var(--ssdk-radius) 0;
+	color: var(--ssdk-ink);
+	font-weight: 600;
+}
+.ssdk-post-content blockquote p { margin: 0; }
+.ssdk-post-content pre {
+	background: var(--ssdk-blue-deep);
+	color: #DCEAF7;
+	padding: 18px 20px;
+	border-radius: var(--ssdk-radius);
+	overflow-x: auto;
+}
+.ssdk-post-content table { width: 100%; border-collapse: collapse; margin: 1.4em 0; }
+.ssdk-post-content th, .ssdk-post-content td { border: 1px solid var(--ssdk-line); padding: 10px 14px; text-align: left; }
+.ssdk-post-content th { background: var(--ssdk-blue-50); color: var(--ssdk-ink); }
+
+/* Sidebar */
+.ssdk-sidebar-wrap { flex-shrink: 0; }
+.ssdk-sidebar .widget {
+	background: var(--ssdk-paper);
+	border: 1px solid var(--ssdk-line);
+	border-radius: var(--ssdk-radius);
+	padding: 24px;
+	box-shadow: var(--ssdk-shadow);
+	margin-bottom: 22px;
+}
+.ssdk-sidebar .widget-title { font-size: 1.15rem; margin-bottom: 12px; }
+.ssdk-sidebar .widget-text { font-size: 15px; margin-bottom: 14px; }
+.ssdk-sidebar .widget-phone { font-weight: 700; font-size: 17px; }
+.widget-area .widget ul { margin-top: 10px; }
+.widget-area .widget li { list-style: none; margin-bottom: 8px; }
+.widget-area .widget li::before { content: '›'; color: var(--ssdk-blue); font-weight: 800; margin-right: 8px; }
+
+/* =====================================================================
+   Single post
+   ===================================================================== */
+.ssdk-single { padding: 56px 0 64px; }
+.ssdk-single-thumb img { border-radius: var(--ssdk-radius-lg); width: 100%; box-shadow: var(--ssdk-shadow); }
+.ssdk-single-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
+	margin: 26px 0;
+	padding-bottom: 18px;
+	border-bottom: 1px solid var(--ssdk-line);
+	font-size: 14px;
+	font-weight: 600;
+}
+.ssdk-meta-cats a {
+	background: var(--ssdk-blue-50);
+	color: var(--ssdk-blue);
+	padding: 5px 14px;
+	border-radius: 999px;
+	font-weight: 700;
+}
+.ssdk-meta-cats a:hover { background: var(--ssdk-blue); color: #fff; }
+.ssdk-meta-date { color: var(--ssdk-muted); }
+.ssdk-single-content { font-size: 17px; }
+.ssdk-single-content img { border-radius: var(--ssdk-radius); margin: 1.6em 0; }
+.ssdk-single-content ul, .ssdk-single-content ol { padding-left: 26px; margin: 1.2em 0; }
+.ssdk-single-content li { list-style: disc; margin-bottom: .5em; }
+.ssdk-single-content blockquote {
+	margin: 1.8em 0;
+	padding: 20px 24px;
+	border-left: 4px solid var(--ssdk-blue);
+	background: var(--ssdk-blue-50);
+	border-radius: 0 var(--ssdk-radius) var(--ssdk-radius) 0;
+	color: var(--ssdk-ink);
+	font-size: 18px;
+	font-weight: 600;
+}
+.ssdk-single-content h2 { margin-top: 1.8em; }
+.ssdk-single-content h3 { margin-top: 1.6em; }
+.ssdk-single-content h2:first-child, .ssdk-single-content h3:first-child { margin-top: 0; }
+.ssdk-post-footer { margin-top: 40px; padding-top: 26px; border-top: 1px solid var(--ssdk-line); }
+.ssdk-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.ssdk-tag {
+	background: var(--ssdk-mist);
+	color: var(--ssdk-blue-dark);
+	border: 1px solid var(--ssdk-line);
+	padding: 6px 14px;
+	border-radius: 999px;
+	font-size: 14px;
+	font-weight: 700;
+}
+.ssdk-tag:hover { background: var(--ssdk-blue-50); border-color: var(--ssdk-blue); }
+.ssdk-related h3 { font-size: 1.25rem; margin-bottom: 16px; }
+.ssdk-related-list { display: grid; gap: 14px; }
+.ssdk-related-list li a {
+	display: flex;
+	gap: 14px;
+	align-items: baseline;
+	padding: 16px 18px;
+	background: var(--ssdk-mist);
+	border-radius: var(--ssdk-radius);
+	color: var(--ssdk-ink);
+	transition: background .2s, transform .2s var(--ssdk-ease);
+}
+.ssdk-related-list li a:hover { background: var(--ssdk-blue-50); transform: translateX(4px); }
+.ssdk-related-date { flex: 0 0 auto; font-size: 13px; font-weight: 700; color: var(--ssdk-blue); }
+
+/* =====================================================================
+   Blog archive — justified grid
+   ===================================================================== */
+.ssdk-blog-archive { padding: 64px 0 72px; }
+.ssdk-justified {
+	display: grid;
+	grid-auto-rows: 200px;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 16px;
+}
+.ssdk-blog-card {
+	position: relative;
+	border-radius: var(--ssdk-radius);
+	overflow: hidden;
+	box-shadow: var(--ssdk-shadow);
+	background: var(--ssdk-mist);
+	display: flex;
+	align-items: flex-end;
+}
+.ssdk-blog-card-span-1 { grid-row: span 1; }
+.ssdk-blog-card-span-2 { grid-row: span 2; }
+.ssdk-blog-card-span-3 { grid-row: span 3; }
+.ssdk-blog-card-span-4 { grid-row: span 4; }
+.ssdk-blog-card-img {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+}
+.ssdk-blog-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.ssdk-blog-card-img::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(12, 42, 68, .82) 0%, rgba(12, 42, 68, .25) 55%, rgba(12, 42, 68, .1) 100%);
+}
+.ssdk-blog-card-body {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	padding: 20px 22px;
+	color: #fff;
+}
+.ssdk-blog-card-cats {
+	display: inline-block;
+	background: var(--ssdk-accent);
+	font-size: 12px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	padding: 4px 12px;
+	border-radius: 999px;
+	margin-bottom: 10px;
+}
+.ssdk-blog-card-title {
+	color: #fff;
+	font-size: 1.25rem;
+	margin: 0 0 8px;
+}
+.ssdk-blog-card-title a { color: #fff; }
+.ssdk-blog-card-title a:hover { color: var(--ssdk-blue-100); }
+.ssdk-blog-card-date { font-size: 13px; color: rgba(255, 255, 255, .75); display: block; margin-bottom: 6px; }
+.ssdk-blog-card-excerpt { font-size: 14.5px; color: rgba(255, 255, 255, .9); margin: 0 0 12px; }
+.ssdk-blog-card-more { font-size: 14px; font-weight: 700; color: #fff; }
+.ssdk-blog-card-more::after { content: ''; display: inline-block; width: 0; transition: width .25s var(--ssdk-ease); }
+.ssdk-blog-card:hover .ssdk-blog-card-more::after { width: 8px; }
+.ssdk-no-posts { padding: 40px 0; font-size: 18px; }
+.ssdk-blog-archive .page-numbers {
+	display: inline-flex;
+	gap: 8px;
+	margin-top: 34px;
+	flex-wrap: wrap;
+}
+.ssdk-blog-archive .page-numbers a, .ssdk-blog-archive .page-numbers span {
+	min-width: 44px; height: 44px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--ssdk-line);
+	border-radius: 10px;
+	font-weight: 700;
+	color: var(--ssdk-ink);
+	padding: 0 12px;
+}
+.ssdk-blog-archive .page-numbers a:hover { background: var(--ssdk-blue-50); border-color: var(--ssdk-blue); }
+.ssdk-blog-archive .page-numbers .current { background: var(--ssdk-blue); color: #fff; border-color: var(--ssdk-blue); }
+
+/* =====================================================================
+   Homepage sections (WPBakery template classes)
+   ===================================================================== */
+.ssdk-section { padding: 84px 0; }
+.ssdk-section.alt, .ssdk-alt { background: var(--ssdk-mist); }
+.ssdk-section-head { max-width: 780px; margin: 0 auto 52px; text-align: center; }
+.ssdk-eyebrow {
+	display: inline-block;
+	font-size: 13.5px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: .08em;
+	color: var(--ssdk-blue);
+	background: var(--ssdk-blue-50);
+	padding: 7px 16px;
+	border-radius: 999px;
+	margin-bottom: 16px;
+}
+.ssdk-section-head h2 { font-size: 2.4rem; }
+.ssdk-section-head p { font-size: 17.5px; margin: 0; }
+.ssdk-section-head.left { text-align: left; margin-left: 0; }
+
+/* Hero */
+.ssdk-hero {
+	position: relative;
+	background: linear-gradient(135deg, var(--ssdk-blue-deep) 0%, var(--ssdk-blue-dark) 55%, var(--ssdk-blue) 100%);
+	color: #fff;
+	padding: 88px 0 96px;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1.05fr .95fr;
+	gap: 56px;
+	align-items: center;
+}
+.ssdk-hero::before {
+	content: '';
+	position: absolute;
+	right: -160px; top: -160px;
+	width: 520px; height: 520px;
+	background: radial-gradient(circle, rgba(255, 255, 255, .14), transparent 65%);
+	border-radius: 50%;
+}
+.ssdk-hero::after {
+	content: '';
+	position: absolute;
+	left: -200px; bottom: -240px;
+	width: 460px; height: 460px;
+	background: radial-gradient(circle, rgba(245, 138, 43, .22), transparent 65%);
+	border-radius: 50%;
+}
+.ssdk-hero-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	background: rgba(255, 255, 255, .12);
+	border: 1px solid rgba(255, 255, 255, .25);
+	padding: 8px 16px;
+	border-radius: 999px;
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 22px;
+}
+.ssdk-hero-eyebrow .dot {
+	width: 10px; height: 10px;
+	border-radius: 50%;
+	background: #4CD97B;
+	box-shadow: 0 0 0 4px rgba(76, 217, 123, .25);
+}
+.ssdk-hero h1 { color: #fff; font-size: 3.4rem; margin-bottom: .35em; }
+.ssdk-hero h1 .accent { color: #FFD9A8; }
+.ssdk-hero-lead { font-size: 18.5px; color: rgba(255, 255, 255, .88); max-width: 560px; }
+.ssdk-hero-stats {
+	display: flex;
+	gap: 40px;
+	margin: 34px 0 36px;
+	flex-wrap: wrap;
+}
+.ssdk-hero-stat .num { font-size: 2.2rem; font-weight: 800; color: #fff; line-height: 1; }
+.ssdk-hero-stat .lab { font-size: 13.5px; color: rgba(255, 255, 255, .7); margin-top: 6px; }
+.ssdk-hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.ssdk-hero-actions .ssdk-cta { background: var(--ssdk-accent); }
+.ssdk-hero-actions .ssdk-cta:hover { background: var(--ssdk-accent-dark); }
+.ssdk-hero-actions .ssdk-cta-ghost { color: #fff; }
+.ssdk-hero-actions .ssdk-cta-ghost:hover { color: #FFD9A8; }
+.ssdk-hero-img { position: relative; }
+.ssdk-hero-img img { border-radius: var(--ssdk-radius-lg); box-shadow: var(--ssdk-shadow-lg); width: 100%; }
+.ssdk-hero-img::before {
+	content: '';
+	position: absolute;
+	inset: -18px -18px auto auto;
+	width: 120px; height: 120px;
+	border: 4px solid rgba(245, 138, 43, .7);
+	border-radius: 28px;
+	transform: rotate(6deg);
+	z-index: -1;
+}
+.ssdk-hero-iso {
+	position: absolute;
+	left: -28px; bottom: -22px;
+	background: #fff;
+	border-radius: var(--ssdk-radius);
+	box-shadow: var(--ssdk-shadow-lg);
+	padding: 14px 18px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-size: 13px;
+	font-weight: 700;
+	color: var(--ssdk-ink);
+}
+.ssdk-hero-iso img { width: 54px; height: 54px; }
+
+/* Trust strip */
+.ssdk-trust {
+	background: #fff;
+	border-bottom: 1px solid var(--ssdk-line);
+}
+.ssdk-trust-inner {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+	padding: 40px 0;
+}
+.ssdk-trust-item {
+	display: flex;
+	gap: 14px;
+	align-items: flex-start;
+}
+.ssdk-trust-ic {
+	flex: 0 0 44px;
+	height: 44px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--ssdk-blue-50);
+	border-radius: 12px;
+	color: var(--ssdk-blue);
+	font-size: 20px;
+}
+.ssdk-trust-item h3 { font-size: 1.15rem; margin: 0 0 4px; }
+.ssdk-trust-item p { font-size: 14.5px; margin: 0; color: var(--ssdk-muted); }
+
+/* Services — image-led cards */
+.ssdk-services-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 24px;
+}
+.ssdk-service-card {
+	position: relative;
+	border-radius: var(--ssdk-radius-lg);
+	overflow: hidden;
+	background: var(--ssdk-paper);
+	box-shadow: var(--ssdk-shadow);
+	display: flex;
+	min-height: 340px;
+	transition: transform .3s var(--ssdk-ease), box-shadow .3s;
+}
+.ssdk-service-card:hover { transform: translateY(-5px); box-shadow: var(--ssdk-shadow-lg); }
+.ssdk-service-card-img { width: 100%; height: 100%; position: relative; overflow: hidden; }
+.ssdk-service-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ssdk-ease); }
+.ssdk-service-card:hover .ssdk-service-card-img img { transform: scale(1.05); }
+.ssdk-service-card-body {
+	flex: 1;
+	padding: 30px 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.ssdk-service-num {
+	font-size: 13px;
+	font-weight: 800;
+	color: var(--ssdk-blue);
+	letter-spacing: .1em;
+	margin-bottom: 10px;
+}
+.ssdk-service-card h3 { font-size: 1.45rem; margin-bottom: 10px; }
+.ssdk-service-card p { font-size: 15.5px; margin-bottom: 16px; }
+.ssdk-service-link { font-weight: 700; font-size: 14.5px; display: inline-flex; align-items: center; gap: 8px; }
+.ssdk-service-link::after { content: '→'; transition: transform .2s var(--ssdk-ease); }
+.ssdk-service-card:hover .ssdk-service-link { color: var(--ssdk-blue-dark); }
+.ssdk-service-card:hover .ssdk-service-link::after { transform: translateX(4px); }
+
+/* Industries — image-led category grid */
+.ssdk-industries-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+}
+.ssdk-industry-card {
+	position: relative;
+	border-radius: var(--ssdk-radius-lg);
+	overflow: hidden;
+	min-height: 280px;
+	box-shadow: var(--ssdk-shadow);
+	display: block;
+}
+.ssdk-industry-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	inset: 0;
+	transition: transform .5s var(--ssdk-ease);
+}
+.ssdk-industry-card::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(12, 42, 68, .85), rgba(12, 42, 68, .15));
+}
+.ssdk-industry-card:hover img { transform: scale(1.06); }
+.ssdk-industry-cell { position: relative; }
+.ssdk-industry-body {
+	position: absolute;
+	left: 0; bottom: 0;
+	right: 0;
+	z-index: 1;
+	padding: 26px 28px;
+	color: #fff;
+}
+.ssdk-industry-body h3 { color: #fff; font-size: 1.3rem; margin-bottom: 4px; }
+.ssdk-industry-body p { color: rgba(255, 255, 255, .8); font-size: 14.5px; margin: 0; }
+
+/* Why us — 4 benefits, distinct layout */
+.ssdk-why-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 22px;
+}
+.ssdk-why-card {
+	background: var(--ssdk-paper);
+	border: 1px solid var(--ssdk-line);
+	border-radius: var(--ssdk-radius);
+	padding: 30px 26px;
+	transition: border-color .25s, transform .25s var(--ssdk-ease);
+}
+.ssdk-why-card:hover { border-color: var(--ssdk-blue); transform: translateY(-4px); }
+.ssdk-why-num {
+	font-size: 3.2rem;
+	font-weight: 800;
+	color: var(--ssdk-blue-100);
+	line-height: 1;
+	margin-bottom: 14px;
+}
+.ssdk-why-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.ssdk-why-card p { font-size: 15px; margin: 0; }
+
+/* Process — timeline */
+.ssdk-process { background: linear-gradient(160deg, var(--ssdk-blue-deep) 0%, var(--ssdk-blue-dark) 100%); color: #fff; }
+.ssdk-process .ssdk-section-head h2, .ssdk-process .ssdk-section-head p { color: rgba(255, 255, 255, .9); }
+.ssdk-process-track {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 28px;
+	counter-reset: step;
+}
+.ssdk-process-step { position: relative; padding-top: 8px; }
+.ssdk-process-step::before {
+	counter-increment: step;
+	content: counter(step, decimal-leading-zero);
+	display: block;
+	font-size: 15px;
+	font-weight: 800;
+	color: #FFD9A8;
+	letter-spacing: .08em;
+	margin-bottom: 12px;
+}
+.ssdk-process-step::after {
+	content: '';
+	position: absolute;
+	top: 34px;
+	right: -14px;
+	width: 28px;
+	height: 2px;
+	background: rgba(255, 255, 255, .25);
+}
+.ssdk-process-step:last-child::after { display: none; }
+.ssdk-process-ic {
+	width: 54px; height: 54px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, .1);
+	border: 1px solid rgba(255, 255, 255, .25);
+	border-radius: 14px;
+	margin-bottom: 18px;
+}
+.ssdk-process-step h3 { color: #fff; font-size: 1.15rem; margin-bottom: 8px; }
+.ssdk-process-step p { color: rgba(255, 255, 255, .75); font-size: 15px; margin: 0; }
+
+/* Testimonials — simplified single-card slider */
+.ssdk-testimonials-slider {
+	position: relative;
+	max-width: 860px;
+	margin: 0 auto;
+}
+.ssdk-testimonial {
+	background: var(--ssdk-paper);
+	border: 1px solid var(--ssdk-line);
+	border-radius: var(--ssdk-radius-lg);
+	box-shadow: var(--ssdk-shadow);
+	padding: 44px 48px;
+	position: relative;
+}
+.ssdk-testimonial::before {
+	content: '“';
+	position: absolute;
+	top: 14px; left: 32px;
+	font-size: 5.5rem;
+	line-height: 1;
+	color: var(--ssdk-blue-100);
+	font-family: Georgia, serif;
+}
+.ssdk-testimonial-text {
+	font-size: 18px;
+	font-weight: 600;
+	color: var(--ssdk-ink);
+	line-height: 1.6;
+	margin-bottom: 26px;
+	padding-top: 22px;
+}
+.ssdk-testimonial-author { display: flex; align-items: center; gap: 14px; }
+.ssdk-testimonial-avatar {
+	width: 52px; height: 52px;
+	border-radius: 50%;
+	background: var(--ssdk-blue);
+	color: #fff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 800;
+	font-size: 18px;
+	flex: 0 0 auto;
+}
+.ssdk-testimonial-name { font-weight: 800; color: var(--ssdk-ink); line-height: 1.2; }
+.ssdk-testimonial-role { font-size: 13.5px; color: var(--ssdk-muted); }
+.ssdk-testimonial-nav {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 30px;
+}
+.ssdk-testimonial-btn {
+	width: 48px; height: 48px;
+	border-radius: 50%;
+	border: 1px solid var(--ssdk-line);
+	background: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+	color: var(--ssdk-ink);
+	transition: background .2s, border-color .2s;
+}
+.ssdk-testimonial-btn:hover { background: var(--ssdk-blue); border-color: var(--ssdk-blue); color: #fff; }
+
+/* Technology partners strip */
+.ssdk-partners { background: var(--ssdk-mist); }
+.ssdk-partner-grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 14px;
+}
+.ssdk-partner {
+	background: #fff;
+	border: 1px solid var(--ssdk-line);
+	border-radius: var(--ssdk-radius);
+	min-height: 96px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 18px 14px;
+	font-weight: 800;
+	font-size: 15px;
+	color: var(--ssdk-ink);
+	box-shadow: 0 2px 8px rgba(12, 42, 68, .04);
+	transition: border-color .2s, color .2s, transform .2s var(--ssdk-ease);
+}
+.ssdk-partner:hover { border-color: var(--ssdk-blue); color: var(--ssdk-blue); transform: translateY(-3px); }
+
+/* Clients marquee */
+.ssdk-clients-strip { overflow: hidden; padding: 8px 0 4px; }
+.ssdk-clients-track {
+	display: flex;
+	gap: 56px;
+	width: max-content;
+	animation: ssdk-marquee 38s linear infinite;
+}
+.ssdk-clients-strip:hover .ssdk-clients-track { animation-play-state: paused; }
+.ssdk-client-logo {
+	width: 168px;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: .55;
+	transition: opacity .25s;
+	flex: 0 0 auto;
+}
+.ssdk-client-logo:hover { opacity: 1; }
+.ssdk-client-logo img { width: 100%; height: auto; max-height: 54px; }
+@keyframes ssdk-marquee {
+	from { transform: translateX(0); }
+	to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+	.ssdk-clients-track { animation: none; }
+	html { scroll-behavior: auto; }
+}
+
+/* Blog preview */
+.ssdk-blog-preview-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 26px;
+}
+.ssdk-blog-preview-card {
+	background: var(--ssdk-paper);
+	border: 1px solid var(--ssdk-line);
+	border-radius: var(--ssdk-radius-lg);
+	overflow: hidden;
+	box-shadow: var(--ssdk-shadow);
+	transition: transform .25s var(--ssdk-ease), box-shadow .25s;
+}
+.ssdk-blog-preview-card:hover { transform: translateY(-5px); box-shadow: var(--ssdk-shadow-lg); }
+.ssdk-blog-preview-img { aspect-ratio: 16 / 10; overflow: hidden; }
+.ssdk-blog-preview-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s var(--ssdk-ease); }
+.ssdk-blog-preview-card:hover .ssdk-blog-preview-img img { transform: scale(1.05); }
+.ssdk-blog-preview-body { padding: 22px 24px 26px; }
+.ssdk-blog-preview-cat {
+	font-size: 12px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: .06em;
+	color: var(--ssdk-accent-dark);
+	margin-bottom: 8px;
+}
+.ssdk-blog-preview-title { font-size: 1.2rem; margin-bottom: 10px; }
+.ssdk-blog-preview-title a { color: var(--ssdk-ink); }
+.ssdk-blog-preview-title a:hover { color: var(--ssdk-blue); }
+.ssdk-blog-preview-date { font-size: 13px; color: var(--ssdk-muted); display: block; margin-bottom: 10px; }
+.ssdk-blog-preview-excerpt { font-size: 14.5px; margin: 0 0 14px; }
+.ssdk-blog-preview-more { font-weight: 700; font-size: 14px; }
+.ssdk-blog-preview-all { text-align: center; margin-top: 40px; }
+.ssdk-blog-preview-all a { font-weight: 700; font-size: 15.5px; }
+
+/* vc_posts_grid (WPBakery) styled to match the preview cards */
+.ssdk-blog-preview-grid .vc_grid-item { display: block; }
+.ssdk-blog-preview-grid .vc_grid-item-inner {
+	background: var(--ssdk-paper);
+	border: 1px solid var(--ssdk-line);
+	border-radius: var(--ssdk-radius-lg);
+	overflow: hidden;
+	box-shadow: var(--ssdk-shadow);
+	transition: transform .25s var(--ssdk-ease), box-shadow .25s;
+}
+.ssdk-blog-preview-grid .vc_grid-item:hover .vc_grid-item-inner {
+	transform: translateY(-5px);
+	box-shadow: var(--ssdk-shadow-lg);
+}
+.ssdk-blog-preview-grid .vc_posts_grid-image { display: block; overflow: hidden; aspect-ratio: 16 / 10; }
+.ssdk-blog-preview-grid .vc_posts_grid-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s var(--ssdk-ease); }
+.ssdk-blog-preview-grid .vc_grid-item:hover .vc_posts_grid-image img { transform: scale(1.05); }
+.ssdk-blog-preview-grid .vc_posts_grid-info { padding: 22px 24px 26px; }
+.ssdk-blog-preview-grid .vc_posts_grid-title { font-size: 1.2rem; margin: 0 0 8px; font-weight: 800; color: var(--ssdk-ink); }
+.ssdk-blog-preview-grid .vc_posts_grid-title a { color: var(--ssdk-ink); }
+.ssdk-blog-preview-grid .vc_posts_grid-title a:hover { color: var(--ssdk-blue); }
+.ssdk-blog-preview-grid .vc_posts_grid-meta { font-size: 13px; color: var(--ssdk-muted); margin-bottom: 10px; }
+.ssdk-blog-preview-grid .vc_posts_grid-meta a { color: var(--ssdk-accent-dark); font-weight: 800; }
+.ssdk-blog-preview-grid .vc_posts_grid-excerpt { font-size: 14.5px; margin: 0 0 14px; }
+.ssdk-blog-preview-grid .vc_posts_grid-read-more { font-weight: 700; font-size: 14px; }
+
+/* CTA band */
+.ssdk-cta-band {
+	background: linear-gradient(135deg, var(--ssdk-blue) 0%, var(--ssdk-blue-dark) 100%);
+	color: #fff;
+	text-align: center;
+	padding: 72px 0;
+	position: relative;
+	overflow: hidden;
+}
+.ssdk-cta-band::before {
+	content: '';
+	position: absolute;
+	right: -140px; top: -140px;
+	width: 400px; height: 400px;
+	background: rgba(255, 255, 255, .08);
+	border-radius: 50%;
+}
+.ssdk-cta-band h2 { color: #fff; position: relative; font-size: 2.4rem; }
+.ssdk-cta-band p { color: rgba(255, 255, 255, .85); font-size: 17px; position: relative; max-width: 620px; margin: 0 auto 30px; }
+.ssdk-cta-band .ssdk-cta { background: var(--ssdk-accent); position: relative; }
+.ssdk-cta-band .ssdk-cta:hover { background: var(--ssdk-accent-dark); }
+
+/* FAQ */
+.ssdk-faq-list { max-width: 860px; margin: 0 auto; display: grid; gap: 14px; }
+.ssdk-faq-item {
+	background: var(--ssdk-paper);
+	border: 1px solid var(--ssdk-line);
+	border-radius: var(--ssdk-radius);
+	overflow: hidden;
+}
+.ssdk-faq-q {
+	width: 100%;
+	text-align: left;
+	background: none;
+	border: 0;
+	padding: 20px 24px;
+	font-size: 16px;
+	font-weight: 700;
+	color: var(--ssdk-ink);
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+}
+.ssdk-faq-q::after {
+	content: '+';
+	font-size: 22px;
+	color: var(--ssdk-blue);
+	flex: 0 0 auto;
+	transition: transform .25s var(--ssdk-ease);
+}
+.ssdk-faq-item.is-open .ssdk-faq-q::after { transform: rotate(45deg); }
+.ssdk-faq-a {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height .3s var(--ssdk-ease);
+}
+.ssdk-faq-item.is-open .ssdk-faq-a { max-height: 400px; }
+.ssdk-faq-a p { padding: 0 24px 22px; margin: 0; font-size: 15.5px; }
+
+/* =====================================================================
+   Footer
+   ===================================================================== */
+.ssdk-footer-cta {
+	background: linear-gradient(135deg, var(--ssdk-blue) 0%, var(--ssdk-blue-dark) 100%);
+	color: #fff;
+	padding: 64px 0;
+	position: relative;
+	overflow: hidden;
+}
+.ssdk-footer-cta::before {
+	content: '';
+	position: absolute;
+	left: -160px; top: -160px;
+	width: 440px; height: 440px;
+	background: rgba(255, 255, 255, .07);
+	border-radius: 50%;
+}
+.ssdk-footer-cta-inner {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 36px;
+	flex-wrap: wrap;
+}
+.ssdk-footer-cta-text h2 { color: #fff; margin-bottom: 6px; }
+.ssdk-footer-cta-text p { color: rgba(255, 255, 255, .85); margin: 0; max-width: 640px; }
+.ssdk-footer-cta-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.ssdk-footer-cta-actions .ssdk-cta-ghost { color: #fff; }
+
+.ssdk-site-footer {
+	background: var(--ssdk-blue-deep);
+	color: #A9BDD3;
+	padding: 72px 0 28px;
+}
+.ssdk-footer-grid {
+	display: grid;
+	grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+	gap: 44px;
+}
+.footer-block .footer-title {
+	color: #fff;
+	font-size: 1.05rem;
+	margin-bottom: 18px;
+}
+.footer-brand .ssdk-logo img { height: 52px; }
+.footer-tagline {
+	font-size: 14.5px;
+	color: #A9BDD3;
+	margin: 14px 0 18px;
+	max-width: 320px;
+}
+.footer-iso { width: 84px; height: 84px; margin-bottom: 16px; }
+.footer-social { display: flex; gap: 12px; }
+.footer-social a {
+	width: 38px; height: 38px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, .08);
+	border-radius: 10px;
+	color: #DCEAF7;
+	transition: background .2s, color .2s;
+}
+.footer-social a:hover { background: var(--ssdk-blue); color: #fff; }
+.footer-links li { margin-bottom: 11px; }
+.footer-links a {
+	color: #A9BDD3;
+	font-size: 15px;
+	transition: color .2s, padding-left .2s;
+}
+.footer-links a:hover { color: #fff; padding-left: 5px; }
+.footer-contact-list { display: grid; gap: 12px; }
+.footer-contact-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: #DCEAF7; }
+.footer-contact-list a { color: #DCEAF7; }
+.footer-contact-list a:hover { color: #fff; }
+.footer-whatsapp {
+	display: inline-flex !important;
+	align-items: center;
+	gap: 8px;
+	background: rgba(76, 217, 123, .12);
+	color: #4CD97B !important;
+	padding: 8px 14px !important;
+	border-radius: 999px;
+	font-weight: 700;
+	margin-top: 4px;
+}
+.footer-whatsapp:hover { background: rgba(76, 217, 123, .22); }
+.footer-block-wrap { min-width: 0; }
+.footer-block .widget { background: transparent; border: 0; box-shadow: none; padding: 0; }
+.footer-block .widget-title { color: #fff; }
+
+.ssdk-footer-bottom {
+	border-top: 1px solid rgba(255, 255, 255, .1);
+	margin-top: 56px;
+	padding-top: 26px;
+}
+.ssdk-footer-bottom-inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
+	font-size: 13.5px;
+}
+.ssdk-footer-bottom p { margin: 0; }
+.footer-legal-links { display: flex; gap: 20px; }
+.footer-legal-links a { color: #A9BDD3; }
+.footer-legal-links a:hover { color: #fff; }
+
+/* Widget-based footer */
+.ssdk-footer-widgets {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 44px;
+}
+
+/* Reveal-on-scroll */
+[data-reveal] {
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity .6s var(--ssdk-ease), transform .6s var(--ssdk-ease);
+}
+[data-reveal].is-visible {
+	opacity: 1;
+	transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+	[data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* =====================================================================
+   404
+   ===================================================================== */
+.ssdk-error { padding: 80px 0 90px; text-align: center; }
+.ssdk-error-inner { max-width: 640px; margin: 0 auto; }
+.ssdk-error h1 { font-size: 5.5rem; color: var(--ssdk-blue); margin-bottom: 0; }
+.ssdk-error-lead { font-size: 19px; color: var(--ssdk-ink); font-weight: 600; }
+.ssdk-error-help { color: var(--ssdk-muted); }
+.ssdk-error-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	margin: 26px 0 30px;
+}
+.ssdk-error-links a {
+	background: var(--ssdk-blue-50);
+	color: var(--ssdk-blue-dark);
+	padding: 9px 18px;
+	border-radius: 999px;
+	font-weight: 700;
+	font-size: 14.5px;
+}
+.ssdk-error-links a:hover { background: var(--ssdk-blue); color: #fff; }
+.ssdk-error-search {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.ssdk-error-search input {
+	flex: 1;
+	min-width: 220px;
+	padding: 13px 18px;
+	border: 1px solid var(--ssdk-line);
+	border-radius: 999px;
+	font-size: 15px;
+	font-family: inherit;
+	background: #fff;
+}
+.ssdk-error-search input:focus { outline: 2px solid var(--ssdk-blue); border-color: var(--ssdk-blue); }
+.ssdk-error-search button {
+	background: var(--ssdk-blue);
+	color: #fff;
+	border: 0;
+	padding: 13px 28px;
+	border-radius: 999px;
+	font-weight: 700;
+	font-size: 15px;
+	cursor: pointer;
+	transition: background .2s;
+}
+.ssdk-error-search button:hover { background: var(--ssdk-blue-dark); }
+
+/* =====================================================================
+   WPBakery scaffolding (only what the templates rely on)
+   ===================================================================== */
+.vc_row { margin-bottom: 0 !important; }
+.vc_column-inner { padding: 0 !important; }
+.vc_row.ssdk-row-compact { margin-bottom: 0 !important; }
+
+/* =====================================================================
+   Responsive
+   ===================================================================== */
+@media (max-width: 1024px) {
+	.ssdk-hero-inner { grid-template-columns: 1fr; gap: 44px; }
+	.ssdk-hero-img { max-width: 640px; }
+	.ssdk-services-grid { grid-template-columns: 1fr; }
+	.ssdk-industries-grid { grid-template-columns: repeat(2, 1fr); }
+	.ssdk-why-grid { grid-template-columns: repeat(2, 1fr); }
+	.ssdk-process-track { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+	.ssdk-process-step::after { display: none; }
+	.ssdk-partner-grid { grid-template-columns: repeat(4, 1fr); }
+	.ssdk-blog-preview-grid { grid-template-columns: repeat(2, 1fr); }
+	.ssdk-footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+	.ssdk-nav { display: none; }
+	.ssdk-burger { display: flex; }
+	.ssdk-header-actions .ssdk-phone-btn span { display: none; }
+	h1 { font-size: 2.5rem; }
+	h2 { font-size: 2rem; }
+}
+
+@media (max-width: 768px) {
+	body { font-size: 16px; }
+	.ssdk-container { padding: 0 18px; }
+	.ssdk-section { padding: 60px 0; }
+	.ssdk-section-head { margin-bottom: 38px; }
+	.ssdk-section-head h2 { font-size: 1.85rem; }
+	.ssdk-hero { padding: 56px 0 64px; }
+	.ssdk-hero h1 { font-size: 2.4rem; }
+	.ssdk-hero-lead { font-size: 16.5px; }
+	.ssdk-hero-stats { gap: 24px; }
+	.ssdk-hero-stat .num { font-size: 1.8rem; }
+	.ssdk-hero-iso { position: static; margin-top: 22px; display: inline-flex; }
+	.ssdk-utilbar-inner { justify-content: center; }
+	.util-addr, .util-links { justify-content: center; }
+	.ssdk-header-inner { padding: 12px 18px; gap: 14px; }
+	.ssdk-logo img { height: 46px; }
+	.ssdk-page-title { padding: 44px 0 40px; }
+	.ssdk-page-title-text { font-size: 2rem; }
+	.ssdk-page { padding: 44px 0 56px; }
+	.ssdk-page-inner { flex-direction: column; gap: 30px; }
+	.ssdk-page-inner.has-sidebar .ssdk-sidebar-wrap { order: 1 !important; flex: 1 1 auto; width: 100%; }
+	.ssdk-justified { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; gap: 12px; }
+	.ssdk-blog-card-span-3, .ssdk-blog-card-span-4 { grid-row: span 2; }
+	.ssdk-testimonial { padding: 34px 28px; }
+	.ssdk-testimonial-text { font-size: 16px; }
+	.ssdk-trust-inner { grid-template-columns: 1fr 1fr; gap: 22px; }
+	.ssdk-industries-grid { grid-template-columns: 1fr; }
+	.ssdk-why-grid { grid-template-columns: 1fr; }
+	.ssdk-process-track { grid-template-columns: 1fr; gap: 34px; }
+	.ssdk-partner-grid { grid-template-columns: repeat(3, 1fr); }
+	.ssdk-blog-preview-grid { grid-template-columns: 1fr; }
+	.ssdk-footer-cta-inner { flex-direction: column; align-items: flex-start; }
+	.ssdk-footer-cta-text h2 { font-size: 1.7rem; }
+	.ssdk-footer-grid { grid-template-columns: 1fr; gap: 34px; }
+	.ssdk-footer-widgets { grid-template-columns: 1fr; gap: 30px; }
+	.ssdk-footer-bottom-inner { flex-direction: column; align-items: flex-start; }
+	.ssdk-error h1 { font-size: 4rem; }
+	.menu-panel.mega { min-width: 280px; max-width: 320px; padding: 14px; }
+	.mega-links { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+	.ssdk-trust-inner { grid-template-columns: 1fr; }
+	.ssdk-partner-grid { grid-template-columns: repeat(2, 1fr); }
+	.ssdk-hero-actions .ssdk-cta { width: 100%; }
+	.ssdk-justified { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+	.ssdk-blog-card-span-1, .ssdk-blog-card-span-2, .ssdk-blog-card-span-3, .ssdk-blog-card-span-4 { grid-row: span 1; }
+	.ssdk-header-actions { gap: 8px; }
+	.ssdk-cta { padding: 10px 16px; font-size: 14px; }
+}

@@ -1,0 +1,54 @@
+/* Critical above-the-fold CSS (inlined in <head>). */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Manrope','Segoe UI',system-ui,-apple-system,sans-serif;font-size:16.5px;line-height:1.65;color:#4A5C6E;background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:#1763C6}
+h1,h2,h3,h4{color:#12293E;font-weight:800;line-height:1.2;margin:0 0 .35em;letter-spacing:-.015em}
+.ssdk-container{max-width:1170px;margin:0 auto;padding:0 24px}
+.ssdk-pb-container{max-width:1170px;margin:0 auto;padding:0 24px}
+.ssdk-skip-link{position:absolute;left:-9999px;top:0;background:#1763C6;color:#fff;padding:10px 18px;z-index:999;border-radius:0 0 8px 0}
+.ssdk-skip-link:focus{left:0}
+.ssdk-utilbar{background:#0C2A44;color:#A9BDD3;font-size:13px}
+.ssdk-utilbar a{color:#DCEAF7}
+.ssdk-utilbar-inner{max-width:1170px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.util-addr,.util-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.util-social{display:flex;align-items:center;gap:12px}
+.util-social-link{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;color:#A9BDD3;border-radius:50%}
+.util-social-link:hover{background:rgba(255,255,255,.12);color:#fff}
+.ssdk-ic{display:inline-flex;align-items:center;justify-content:center}
+.ssdk-ic svg{width:100%;height:100%}
+.ssdk-site-header{background:#fff;border-bottom:1px solid #DCE6F0;position:relative;z-index:200}
+.ssdk-header-inner{max-width:1170px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:28px}
+.ssdk-logo img{height:56px;width:auto;max-width:240px}
+.ssdk-nav{display:flex;align-items:center;gap:4px;margin:0;padding:0}
+.ssdk-nav>li{position:relative}
+.menu-link{display:inline-flex;align-items:center;padding:12px 14px;font-size:15px;font-weight:700;color:#12293E;border-radius:8px}
+.menu-trigger{position:absolute;top:50%;right:6px;transform:translateY(-50%);width:34px;height:34px;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:0}
+.menu-trigger span{display:block;width:18px;height:2px;background:#12293E;border-radius:2px}
+.menu-panel{position:absolute;top:calc(100% + 8px);left:0;min-width:260px;background:#fff;border:1px solid #DCE6F0;border-radius:14px;box-shadow:0 20px 50px rgba(12,42,68,.12);padding:10px;opacity:0;visibility:hidden;transform:translateY(8px);z-index:50}
+.ssdk-nav>li:hover>.menu-panel,.ssdk-nav>li:focus-within>.menu-panel{opacity:1;visibility:visible;transform:translateY(0)}
+.menu-panel.mega{min-width:560px;max-width:640px;padding:22px}
+.mega-links{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 18px}
+.menu-link.mega-link{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;font-size:14.5px;color:#12293E}
+.menu-link.mega-link:hover{background:#EAF2FB;color:#1763C6}
+.mega-link-ic{flex:0 0 30px;height:30px;display:inline-flex;align-items:center;justify-content:center;background:#EAF2FB;color:#1763C6;border-radius:8px;font-size:13px;font-weight:800}
+.mega-link-all{margin-top:12px;justify-content:center;background:#EAF2FB;color:#1763C6;font-weight:700}
+.mega-link-all:hover{background:#1763C6;color:#fff}
+.ssdk-header-actions{display:flex;align-items:center;gap:14px;margin-left:auto}
+.ssdk-phone-btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;color:#1763C6;padding:10px 6px}
+.ssdk-cta{display:inline-flex;align-items:center;justify-content:center;background:#F58A2B;color:#fff;font-weight:700;font-size:15px;padding:11px 22px;border-radius:999px;box-shadow:0 8px 20px rgba(245,138,43,.3)}
+.ssdk-cta:hover{background:#D9711A;color:#fff}
+.ssdk-burger{display:none;width:44px;height:44px;border:0;background:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:0}
+.ssdk-burger span{display:block;width:24px;height:3px;background:#12293E;border-radius:3px}
+.ssdk-hero{position:relative;background:linear-gradient(135deg,#0C2A44 0%,#124F99 55%,#1763C6 100%);color:#fff;padding:88px 0 96px;overflow:hidden}
+.ssdk-hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.ssdk-hero h1{color:#fff;font-size:3.4rem;margin-bottom:.35em}
+.ssdk-hero-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);padding:8px 16px;border-radius:999px;font-size:14px;font-weight:700;margin-bottom:22px}
+.ssdk-hero-stat .num{font-size:2.2rem;font-weight:800;color:#fff;line-height:1}
+.ssdk-footer-cta{background:linear-gradient(135deg,#1763C6 0%,#124F99 100%);color:#fff;padding:64px 0}
+.ssdk-footer-cta h2{color:#fff;margin-bottom:6px}
+.ssdk-footer-cta p{color:rgba(255,255,255,.85);margin:0}
+.ssdk-site-footer{background:#0C2A44;color:#A9BDD3;padding:72px 0 28px}
+.ssdk-page-title{background:linear-gradient(135deg,#0C2A44 0%,#124F99 60%,#1763C6 100%);color:#fff;padding:56px 0 52px;position:relative;overflow:hidden}
+.ssdk-page-title-text{position:relative;z-index:1;color:#fff;font-size:2.6rem;margin-bottom:.25em}

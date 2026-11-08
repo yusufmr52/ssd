@@ -1,0 +1,97 @@
+{
+  "content": [
+    {
+      "type": "row",
+      "attrs": {
+        "class": "vc_row ssdk-row",
+        "css_animation": "",
+        "el_class": "ssdk-inner-title-row"
+      },
+      "content": [
+        {
+          "type": "column",
+          "attrs": {
+            "width": "1/1",
+            "css_animation": "",
+            "el_class": ""
+          },
+          "content": [
+            {
+              "type": "thegem_breadcrumbs",
+              "attrs": {
+                "css_animation": "",
+                "el_class": ""
+              },
+              "content": ""
+            },
+            {
+              "type": "thegem_page_title",
+              "attrs": {
+                "css_animation": "",
+                "el_class": ""
+              },
+              "content": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "attrs": {
+        "class": "vc_row ssdk-row",
+        "css_animation": "",
+        "el_class": "ssdk-inner-content-row"
+      },
+      "content": [
+        {
+          "type": "column",
+          "attrs": {
+            "width": "1/1",
+            "css_animation": "",
+            "el_class": ""
+          },
+          "content": [
+            {
+              "type": "thegem_page_content",
+              "attrs": {
+                "css_animation": "",
+                "el_class": ""
+              },
+              "content": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "attrs": {
+        "class": "vc_row ssdk-row",
+        "css_animation": "",
+        "el_class": "ssdk-inner-cta-row"
+      },
+      "content": [
+        {
+          "type": "column",
+          "attrs": {
+            "width": "1/1",
+            "css_animation": "",
+            "el_class": ""
+          },
+          "content": [
+            {
+              "type": "text_block",
+              "attrs": {
+                "class": "vc_text_block",
+                "css_animation": "",
+                "el_class": ""
+              },
+              "content": "<div class=\"ssdk-cta-band\"><div class=\"ssdk-container\"><h2>Need help with your security systems?</h2><p>Free consultation and UAE-wide on-site surveys &mdash; get in touch today.</p><a class=\"ssdk-cta\" href=\"https://securitysolutionsdubai.com/contact-us/\">Get a Quote</a></div></div>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
