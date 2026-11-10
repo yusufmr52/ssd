@@ -1240,5 +1240,7 @@
         }
       ]
     }
-  ]
+  ],
+  "name": "Homepage",
+  "type": "page"
 }
