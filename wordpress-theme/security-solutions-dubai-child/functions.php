@@ -136,18 +136,12 @@ function ssdk_resource_hints() {
 }
 add_action( 'wp_head', 'ssdk_resource_hints', 2 );
 
-// Async-load third-party scripts when the site is configured to (no-op by default).
-function ssdk_async_thirdparty( $tag, $handle ) {
-	if ( 0 === strpos( $handle, 'ssdk-' ) ) {
-		return $tag;
-	}
-	if ( preg_match( '/src=/', $tag ) && ! preg_match( '/defer|async/', $tag ) ) {
-		$tag = preg_replace( '/(<script)/i', '$1 defer', $tag, 1 );
-	}
-	return $tag;
-}
-// NOTE: leave third-party scripts untouched — the site owner opts in manually.
-add_filter( 'script_loader_tag', 'ssdk_async_thirdparty', 10, 2 );
+// Note: third-party script deferral is intentionally NOT enabled here.
+// Adding defer/async to jQuery, WPBakery, or TheGem scripts breaks their
+// loading order and causes backend editor errors. Defer only applies to
+// the child theme's own footer script (ssdk-main). If you need broader
+// deferral, use a caching plugin (LiteSpeed Cache / WP Rocket) which
+// safely defers only render-blocking assets.
 
 /* ----------------------------------------------------------------
  * 4. SEO: JSON-LD schema, Open Graph, Twitter cards, WebSite sitelinks.
