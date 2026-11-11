@@ -122,7 +122,7 @@ function ssdk_lazyload_content( $content ) {
 	}
 	$content = preg_replace( '/<img([^>]+?)>/i', '<img$1 loading="lazy" decoding="async">', $content );
 	// Defer legacy scripts inside content (keeps page interactive, not blocking).
-	$content = preg_replace( '/<script([^>]*src=[\'"]?[^\'"]*[\'"]?)([^>]*)><\/script>/i', '<script$1$2 defer></script>', $content );
+	$content = preg_replace( '/<script([^>]*src=[^"\']*["\'])([^>]*)><\/script>/i', '<script$1$2 defer></script>', $content );
 	return $content;
 }
 add_filter( 'the_content', 'ssdk_lazyload_content', 20 );
